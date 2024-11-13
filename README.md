@@ -1,6 +1,6 @@
 
 # LeelaQueenOdds
-This repo contains the network used on the [LeelaQueenOdds Bot on Lichess](https://lichess.org/@/LeelaQueenOdds), which you can download [here](lqo_v2.pb.gz).
+This repo contains the network used on the [LeelaQueenOdds Bot on Lichess](https://lichess.org/@/LeelaQueenOdds), which you can [download here lqo_v2.pb.gz](https://github.com/notune/LeelaQueenOdds/releases/download/v2/lqo_v2.pb.gz).
 
 Moreover, it also contains a customizable script that can be used to generate games to train your own odds-network. It supports various engine parameters, node limiting, opening books in FEN format, and automatic Dropbox file uploads. I also provided the configs and resulting training data used for networks v1 and v2.
 
