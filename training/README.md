@@ -11,6 +11,7 @@ python generate_games.py -c config_v0.json
 conda create -n tf_210 python=3.10
 conda activate tf_210
 conda install tensorflow-gpu==2.10.0
+pip install tensorflow-addons==0.20.0
 ```
 this should install all the libraries including the right cuda and cudnn libraries. Then bind these libraries with:
 ```
