@@ -1,0 +1,2 @@
+training/data/all_games_v0.pgn filter=lfs diff=lfs merge=lfs -text
+training/data/all_games_v1.pgn filter=lfs diff=lfs merge=lfs -text

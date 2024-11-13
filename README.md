@@ -8,8 +8,7 @@ Moreover, it also contains a customizable script that can be used to generate ga
 Download the v2 network from [here](lqo_v2.pb.gz) and install it by following the instructions [here](https://lczero.org/play/quickstart/). Make sure to limit the node count of this network to a maximum of `1000` nodes or lower to avoid that the net searches for positions that a human will be unlikely to find, making it less effective at playing odds games. Based on some tests against `maia-2200` we set the node limit on the lichess bot to `800`.
 
 ## Training
-First, generate data with the `generate_games.py` script, and setup a nodecount for each player such that you get a win rate of ~50%. For v0 data I got a win-rate of ~53%, for v1 it was ~55%. To use the script, you have to install the chess library with `pip install chess` (and optionally `pip install dropbox` if you want to use the Dropbox upload).
-For training, convert the resulting PGN files from the `generate_games.py` script into training data, with the [training-data tool](https://github.com/DanielUranga/trainingdata-tool). Then train using this data and the training config (not the generate games config). More info on this [here](https://github.com/LeelaChessZero/lczero-training).
+Detailed instructions on how to train your own odds-network can be found [here](training/README.md).
 
 ## Acknowledgments
 This project wouldn't be possible without the help from these people and projects:
