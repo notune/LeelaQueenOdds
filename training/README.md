@@ -39,4 +39,4 @@ training/768x15x24h-t80_lqo.yaml
 ```
 Once its done you should have `QUEEN_ODDS-swa-10000.pb.gz` file in your `path`. You should also have a non-swa version, but I recommend using that version.
 
-Then repeat this process once but this time use the newly created network for generating games. I used the config_v2, but again, depending on your odds you might want to generate games against another opponent or with other settings.
+Then repeat this process once but this time use the newly created network for generating games. I used the config_v1, but again, depending on your odds you might want to generate games against another opponent or with other settings.
