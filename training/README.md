@@ -8,6 +8,8 @@ python generate_games.py -c config_v0.json
 4. Download the [base-network T82](https://storage.lczero.org/files/768x15x24h-t82-swa-7464000.pb.gz)
 5. Install tensorflow for executing training code, for me it was tf-2.10. Make sure you have miniconda installed and run:
 ```
+conda create -n tf_210 python=3.10
+conda activate tf_210
 conda install tensorflow-gpu==2.10.0
 ```
 this should install all the libraries including the right cuda and cudnn libraries. Then bind these libraries with:
