@@ -5,7 +5,7 @@ This repo contains the network used on the [LeelaQueenOdds Bot on Lichess](https
 Moreover, it also contains a customizable script that can be used to generate games to train your own odds-network. It supports various engine parameters, node limiting, opening books in FEN format, and automatic Dropbox file uploads. I also provided the configs and resulting training data used for networks v1 and v2.
 
 ## Usage
-Download the v2 network from [here](lqo_v2.pb.gz) and install it by following the instructions [here](https://lczero.org/play/quickstart/). Make sure to limit the node count of this network to a maximum of `1000` nodes or lower to avoid that the net searches for positions that a human will be unlikely to find, making it less effective at playing odds games. Based on some tests against `maia-2200` we set the node limit on the lichess bot to `800`.
+Download the v2 network from [here](https://github.com/notune/LeelaQueenOdds/releases/download/v2/lqo_v2.pb.gz) and install it by following the instructions [here](https://lczero.org/play/quickstart/). Make sure to limit the node count of this network to a maximum of `1000` nodes or lower to avoid that the net searches for positions that a human will be unlikely to find, making it less effective at playing odds games. Based on some tests against `maia-2200` we set the node limit on the lichess bot to `800`.
 
 ## Training
 Detailed instructions on how to train your own odds-network can be found [here](training/README.md).
