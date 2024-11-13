@@ -1,0 +1,36 @@
+{
+    "lc0_path": "lc0/build/lc0pro",
+    "white_net": "t1-512x15x8h-distilled-swa-3395000.pb.gz",
+    "black_net": "maia-1900.pb.gz",
+    "num_games": 130000,
+    "pgn_file_name": "v0_leela_queen_odds_games_maia.pgn",
+    "use_opening_book": false,
+    "use_dropbox_upload": false,
+    "fixed_start_fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNB1KBNR w KQkq - 0 1",
+    "engine1_options": {
+        "WeightsFile": "white_net",
+        "CPuctBase": "1000",
+        "CPuctFactor": "5",
+        "Temperature": "0.7",
+        "TempEndgame": "0.1",
+        "TempDecayMoves": "5",
+        "MovesLeftThreshold": "0.95",
+        "DrawScore": "0",
+        "Contempt": "200",
+        "ContemptMaxValue": "1000",
+        "WDLCalibrationElo": "2800",
+        "WDLMaxS": "2",
+        "WDLEvalObjectivity": "0.0",
+        "WDLDrawRateTarget": "0.58",
+        "WDLDrawRateReference": "0.58",
+        "SmartPruningFactor": "0.7"
+    },
+    "engine2_options": {
+        "WeightsFile": "black_net",
+        "Temperature": "3.0",
+        "TempDecayMoves": "30",
+        "TempEndgame": "1.0"
+    },
+    "depth_limit_w": 1500,
+    "depth_limit_b": 20
+}

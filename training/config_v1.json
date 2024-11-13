@@ -1,0 +1,24 @@
+{
+    "lc0_path": "lc0/build/lc0pro",
+    "white_net": "QUEEN_ODDS-10000.pb.gz",
+    "black_net": "maia-1900.pb.gz",
+    "num_games": 130000,
+    "pgn_file_name": "v1_leela_queen_odds_games_maia1900.pgn",
+    "use_opening_book": true,
+    "opening_book": "queen500.epd",
+    "use_dropbox_upload": false,
+    "engine1_options": {
+        "WeightsFile": "white_net",
+        "Temperature": "0.7",
+        "TempEndgame": "0.1",
+        "TempDecayMoves": "5"
+    },
+    "engine2_options": {
+        "WeightsFile": "black_net",
+        "Temperature": "1.5",
+        "TempDecayMoves": "20",
+        "TempEndgame": "0.5"
+    },
+    "depth_limit_w": 1500,
+    "depth_limit_b": 235
+}
