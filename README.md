@@ -14,7 +14,7 @@ Detailed instructions on how to train your own odds-network can be found [here](
 This project wouldn't be possible without the help from these people and projects:
 - [The Leela Chess Zero Engine](https://github.com/LeelaChessZero/lc0)
 - [Marcogio9](https://github.com/Marcogio9/) who made the initial [KnightOdds Bot](https://github.com/Marcogio9/LeelaKnightOdds), inspired me to train my own queen-odds-net, and helped me a lot by providing me both the right engine configs to create the games, as well as the right training config, and answering any questions I had to be able to finish this project
-- [Naphthalin](https://github.com/Naphthalin) and [Hissha](https://www.chess.com/member/hissha) who answered any questions I had on the lichess discord server and helped me evaluate this network as well as find the right settings
+- [Naphthalin](https://github.com/Naphthalin) and [Hissha](https://www.chess.com/member/hissha) who answered any questions I had on the Leela Chess Zero discord server and helped me evaluate this network as well as find the right settings
 - [Maia1900, the human-like chess network](https://github.com/CSSLab/maia-chess) used to create training data for this net
 - [Maia2200 from CallOn84](https://github.com/CallOn84/LeelaNets) used for testing the network
 - [python-chess](https://github.com/niklasf/python-chess) used for generating games with the script
