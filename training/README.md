@@ -12,6 +12,7 @@ conda create -n tf_210 python=3.10
 conda activate tf_210
 conda install tensorflow-gpu==2.10.0
 pip install tensorflow-addons==0.20.0
+pip install pyyaml
 ```
 this should install all the libraries including the right cuda and cudnn libraries. Then bind these libraries with:
 ```
@@ -24,21 +25,22 @@ source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 mkdir -p $CONDA_PREFIX/lib/nvvm/libdevice
 cp $CONDA_PREFIX/lib/libdevice.10.bc $CONDA_PREFIX/lib/nvvm/libdevice/ 
 ```
-then clone the training code:
+then clone the training code and compile protobuf files:
 ```
 git clone https://github.com/LeelaChessZero/lczero-training.git
+cd lczero-training/libs
+git clone https://github.com/LeelaChessZero/lczero-common.git
+cd ..
+./init.sh
 ```
 and convert the base model for training:
 ```
-python net_to_model.py --ignore-errors
---cfg=training/768x15x24h-t80_lqo.yaml
-net/768x15x24h-t82-swa-7464000.pb.gz
+python net_to_model.py --ignore-errors --cfg=training/768x15x24h-t80_lqo.yaml net/768x15x24h-t82-swa-7464000.pb.gz
 ```
 edit the `input-path` of the yaml config, so that it points to your training-data generated earlier with the trainingdata-tool. and edit `path` to point to where the converted base model is. Make sure you see in console output that it gets loaded, otherwise it will train from scratch.
 then start training with:
 ```
-python train.py --cfg
-training/768x15x24h-t80_lqo.yaml
+python train.py --cfg training/768x15x24h-t80_lqo.yaml
 ```
 Once its done you should have `QUEEN_ODDS-swa-10000.pb.gz` file in your `path`. You should also have a non-swa version, but I recommend using that version.
 
