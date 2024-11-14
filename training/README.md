@@ -27,10 +27,8 @@ cp $CONDA_PREFIX/lib/libdevice.10.bc $CONDA_PREFIX/lib/nvvm/libdevice/
 ```
 then clone the training code and compile protobuf files:
 ```
-git clone https://github.com/LeelaChessZero/lczero-training.git
-cd lczero-training/libs
-git clone https://github.com/LeelaChessZero/lczero-common.git
-cd ..
+git clone --recurse-submodules https://github.com/LeelaChessZero/lczero-training.git
+cd lczero-training/
 ./init.sh
 ```
 and convert the base model for training:
