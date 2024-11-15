@@ -6,6 +6,9 @@ Moreover, it also contains a customizable script that can be used to generate ga
 
 ## Usage
 Download the v2 network from [here](https://github.com/notune/LeelaQueenOdds/releases/download/v2/lqo_v2.pb.gz) and install it by following the instructions [here](https://lczero.org/play/quickstart/). Make sure to limit the node count of this network to a maximum of `1000` nodes or lower to avoid that the net searches for positions that a human will be unlikely to find, making it less effective at playing odds games. Based on some tests against `maia-2200` we set the node limit on the lichess bot to `800`.
+The net has only been trained to play good as white, and that the queen-odds position, with the queen removed from d1, is equal.
+
+Optional: If you want to play it as white, you will have to compile [the lc0 version with the color swap option](https://github.com/LeelaChessZero/lc0/pull/2079).
 
 ## Training
 Detailed instructions on how to train your own odds-network can be found [here](training/README.md).
