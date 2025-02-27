@@ -121,8 +121,12 @@ try:
         game.headers["White"] = "LeelaZero_White"
         game.headers["Black"] = "LeelaZero_Black"
 
+        game_drawn=0
         try:
             while not board.is_game_over():
+                if (board.can_claim_fifty_moves()):
+                    game_drawn=1
+                    break
                 if board.turn == chess.WHITE:
                     # White's turn
                     result = engine1.play(board, depth_limit_w)
@@ -138,15 +142,20 @@ try:
             continue
 
         # Game over, set the result
-        game.headers["Result"] = board.result()
+        if (game_drawn==1):
+                game.headers["Result"] = "1/2-1/2"
+        else:
+                game.headers["Result"] = board.result()
 
-        match board.result():
-            case '1-0':
+        if (game_drawn==0):
+            if board.result() == '1-0':
                 wins += 1
-            case '0-1':
+            elif board.result() == '0-1':
                 losses += 1
-            case _:
+            else:
                 draws += 1
+        else:
+            draws +=1
 
         # Calculate total games
         total_games = wins + draws + losses
