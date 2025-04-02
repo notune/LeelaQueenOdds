@@ -23,6 +23,7 @@ This project wouldn't be possible without the help from these people and project
 - [python-chess](https://github.com/niklasf/python-chess) used for generating games with the script
 - [Chris Whittington](https://github.com/ChrisWhittington/Chess-EPDs) for the Queen Odds opening book
 - [amjshl](https://github.com/amjshl/lc0_v31_sc) implemented search contempt for lc0, which improves lqo's elo by another +200.
+- [tiiber](https://github.com/dedekindcut) for sponsoring over 200$ in vast.ai compute for lqo_v3 (wip)
 
 ## License 
 This project is licensed under the **GNU AGPLv3** License, which you can read here: [LICENSE](LICENSE).
