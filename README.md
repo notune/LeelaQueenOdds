@@ -4,11 +4,51 @@ This repo contains the network used on the [LeelaQueenOdds Bot on Lichess](https
 
 Moreover, it also contains a customizable script that can be used to generate games to train your own odds-network. It supports various engine parameters, node limiting, opening books in FEN format, and automatic Dropbox file uploads. I also provided the configs and resulting training data used for networks v1 and v2.
 
-## Usage
-Download the v2 network from [here](https://github.com/notune/LeelaQueenOdds/releases/download/v2/lqo_v2.pb.gz) and install it by following the instructions [here](https://lczero.org/play/quickstart/). Make sure to limit the node count of this network to a maximum of `1000` nodes or lower to avoid that the net searches for positions that a human will be unlikely to find, making it less effective at playing odds games. Based on some tests against `maia-2200` we set the node limit on the lichess bot to `800`.
-The net has only been trained to play good as white, and that the queen-odds position, with the queen removed from d1, is equal.
+## Usage / Installation
+Simplest way to play against LQO is on Lichess: https://lichess.org/@/LeelaQueenOdds
 
-Optional: If you want to play it as white, you will have to compile [the lc0 version with the color swap option](https://github.com/LeelaChessZero/lc0/pull/2079).
+Disclaimer: Other use-cases such as analysis of normal chess positions, or even playing normal chess against the net is unlikely to work as intended as the net evaluates the queen-odds starting position as completely equal.
+
+### Debian Linux (Ubuntu, Linux Mint, ...)
+Execute the following commands:
+```
+sudo apt update
+sudo apt upgrade
+sudo apt install ninja-build meson
+git clone -b search-contempt --recurse-submodules https://github.com/Naphthalin/lc0.git
+./lc0/build.sh
+wget -P lc0/build/release/lc0 https://github.com/notune/LeelaQueenOdds/releases/download/v2/lqo_v2.pb.gz
+```
+the binary will then be located at lc0/build/release/lc0
+
+### Windows
+If you have an NVIDIA GPU copy [lc0_sc_cuda.exe](https://github.com/notune/LeelaQueenOdds/releases/download/v2/lc0_sc_cuda.exe) and [install-cuda_12_9.cmd](https://github.com/notune/LeelaQueenOdds/releases/download/v2/install-cuda_12_9.cmd) into a new folder and double-click the install-cuda file.
+
+Otherwise download [lc0_win_sc_cpu.zip](https://github.com/notune/LeelaQueenOdds/releases/download/v2/lc0_win_sc_cpu.zip) and unpack the file.
+
+Then download the LeelaQueenOdds net: [lqo_v2.pb.gz](https://github.com/notune/LeelaQueenOdds/releases/download/v2/lqo_v2.pb.gz) and copy it into the folder with lc0.exe.
+
+### Settings
+
+Use the following settings when playing against the net: (The most important settings are ScLimit and SwapColors, ScLimit has to be set when searching for more then 1k nodes, and SwapColor is the only way to make it play as Black with reasonable strength).
+
+**When playing as Black (LQO plays White)**:
+```
+WeightsFile: lqo_v2.pb.gz
+ScLimit: 40
+CPuct: 1.5
+FpuValue: 0.4
+DrawScore: -0.4
+```
+**When playing as White (LQO plays Black)**:
+```
+WeightsFile: lqo_v2.pb.gz,
+SwapColors: true
+ScLimit: 32
+CPuct: 1.5
+FpuValue: 0.4
+DrawScore: 0.6
+```
 
 ## Training
 Detailed instructions on how to train your own odds-network can be found [here](training/README.md).
