@@ -33,6 +33,7 @@ Then download the LeelaQueenOdds net: [lqo_v2.pb.gz](https://github.com/notune/L
 Use the following settings when playing against the net: (The most important settings are ScLimit and SwapColors, ScLimit has to be set when searching for more then 1k nodes, and SwapColor is the only way to make it play as Black with reasonable strength).
 
 **When playing as Black (LQO plays White)**:
+Node limit (configure in chess gui): 15000
 ```
 WeightsFile: lqo_v2.pb.gz
 ScLimit: 40
@@ -41,6 +42,7 @@ FpuValue: 0.4
 DrawScore: -0.4
 ```
 **When playing as White (LQO plays Black)**:
+Node limit (configure in chess gui): 12000
 ```
 WeightsFile: lqo_v2.pb.gz,
 SwapColors: true
