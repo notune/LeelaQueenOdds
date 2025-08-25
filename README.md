@@ -17,7 +17,7 @@ sudo apt upgrade
 sudo apt install ninja-build meson
 git clone -b search-contempt --recurse-submodules https://github.com/Naphthalin/lc0.git
 ./lc0/build.sh
-wget -P lc0/build/release/lc0 https://github.com/notune/LeelaQueenOdds/releases/download/v2/lqo_v2.pb.gz
+wget -P lc0/build/release/ https://github.com/notune/LeelaQueenOdds/releases/download/v2/lqo_v2.pb.gz
 ```
 the binary will then be located at lc0/build/release/lc0
 
